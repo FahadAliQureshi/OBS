@@ -1,0 +1,33 @@
+@media only screen and (max-width: 450px) {
+  .arrow {
+    margin: auto 24px !important;
+    width: 25px !important;
+    padding: 0 !important;
+  }
+  .carousel .slide {
+    /* height: 290px !important; */
+  }
+}
+@media only screen and (max-width: 850px) {
+  .arrow {
+    margin: auto 24px !important;
+    width: 25px !important;
+    padding: 0 !important;
+  }
+  .carousel .slide {
+    /* height: 390px !important; */
+  }
+}
+.carousel-status{
+  display: none;
+}
+/* @media only screen and (max-width: 1550px) {
+  .carousel .slide {
+    height: 95%!important;
+  }
+  .carousel .control-dots{
+    background-color: #FFD400;padding: 20px 0px 20px 0px !important;
+  }
+..carousel.carousel-slider{
+  bacl
+}} */
