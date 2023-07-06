@@ -14,17 +14,21 @@ function Career() {
   const [ids, setId] = useState({ id: id });
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  // const [color, setColor] = useState("#ffd400");
   var das = {};
   const requestOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(ids),
   };
+
+  
   useEffect(() => {
     console.log("doom", id);
     console.log("doom", ids);
-    setId(id);
     setIsLoading(true);
+    setId(id);
+ 
     console.log("dooms");
     fetch(
       "https://globaltechnologia.org/webAdmin/public/index.php/api/jobshowbyid",
@@ -79,7 +83,7 @@ function Career() {
 
   return (
     <>
-      <Header color="#000000" />
+       <Header color="#ffd400"/>
       <div className={styles.wrapper}>
         <div className={styles.contain}>
           <div className={styles.heading}>

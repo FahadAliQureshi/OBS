@@ -31,12 +31,42 @@ function Careers() {
   };
 
   const [isLoading, setIsLoading] = useState(false);
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   fetch("https://globaltechnologia.org/webAdmin/public/index.php/api/jobshow")
+  //     .then((res) => {
+  //       // setIsLoading(true);
+  //       if (res.status == 200) {
+  //         return res.json();
+  //       }
+  //     })
+  //     .then((res) => {
+  //       console.log("&&&&&&&&&&&&&", res);
+  //       if (res?.length > 0) {
+  //         const job = res;
+  //         setJob(job);
+  //         setIsLoading(false);
+  //       } else {
+  //         return;
+  //       }
+  //     });
+  //   setTimeout(() => {
+  //     console.log("2222222222222222222");
+  //     setIsLoading(false);
+  //   }, 2000);
+  //   console.log("EEEEEE", job);
+  //   if (job.length != 0) {
+  //     for (var i = 0; i < job.length; i++) {
+  //       console.log("pain", job[i].id);
+  //     }
+  //   }
+  // }, []);
+
   useEffect(() => {
     setIsLoading(true);
     fetch("https://globaltechnologia.org/webAdmin/public/index.php/api/jobshow")
       .then((res) => {
-        setIsLoading(true);
-        if (res.status == 200) {
+        if (res.status === 200) {
           return res.json();
         }
       })
@@ -45,22 +75,18 @@ function Careers() {
         if (res?.length > 0) {
           const job = res;
           setJob(job);
-          setIsLoading(false);
-        } else {
-          return;
         }
+      })
+      .catch((error) => {
+        console.error("Error fetching job data:", error);
+      })
+      .finally(() => {
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 2000);
       });
-    setTimeout(() => {
-      console.log("2222222222222222222");
-      setIsLoading(false);
-    }, 2000);
-    console.log("EEEEEE", job);
-    if (job.length != 0) {
-      for (var i = 0; i < job.length; i++) {
-        console.log("pain", job[i].id);
-      }
-    }
   }, []);
+  
 
   return (
     <>
@@ -81,7 +107,7 @@ function Careers() {
         </motion.div>
       ) : job.length != 0 ? (
         <ErrorBoundary>
-          <Header color="#000000" />
+          <Header color="#ffd400" />
           <div className={styles.wrapper}>
             <div className={styles.career}>
               <p className={styles.cayh}>Careers at OBS Technologia</p>
@@ -91,21 +117,15 @@ function Careers() {
                 Check out our recent job openings!
               </p>
               <div
-                style={{
-                  width: "111%",
-                  background: "#FAFAFA",
-                  display: "flex",
-                  justifyContent: "center",
-                  padding: "30px 20px",
-                  margin: "10px 0px",
-                }}
+              className={styles.indexMain}
               >
-                <div style={{ width: "70%", display: "flex", gap: "4%" }}>
+                <div 
+                className={styles.jobs}
+                >
                   {job?.map((jobc, index) => {
                     console.log("okkkkkkkkkkkkkk", jobc);
                     return (
-                  //yhn say
-
+                      //yhn say
 
                       // <>
                       //   {" "}
@@ -215,72 +235,58 @@ function Careers() {
                       //   )}
                       // </>
 
-
                       //yhn tk
                       <>
                         <div
+
                           style={{
                             display: "flex",
                             flexDirection: "column",
-                            filter: isHovered === index ? "brightness(70%)" : "none",
+                            filter:
+                              isHovered === index ? "brightness(70%)" : "none",
                           }}
                           onMouseOver={() => {
                             handleMouseEnter(index);
                           }}
                           onMouseOut={handleMouseLeave}
                         >
-          <Link
-            href={{
-              pathname: "/careers/forum",
-           // the data
-            }}
-          >
-                          <div style={{ display: "flex" }}>
-                            {isHovered == index && (
-                               <button
-                                style={{
-                                  display: "flex",
-                                  color: "#000000",
-                                  background: "#FFD400",
-                                  position: "absolute",
-                                  width: "70%",
-                                  height: "15%",
-                                  justifyContent: "center",
-                                  alignItems: "center",
-                                  marginLeft: "14.3%",
-                                  marginTop: "50%",
-                                  borderRadius: "51px",
-                                  fontSize: "17px",
-                                  fontWeight: "bold",
-                                  visibility: isHovered === index ? "visible" : "hidden",
-                                  zIndex: 999,
-                                  border: "1px solid #F4F4F4",
-                                }}
-                                onClick={()=>{}}
-                              >
-                               
-                                Apply Now
-                               
+                          <Link
+                            href={{
+                              pathname: "/careers/JobDetails",
+                              // the data
+                            }}
+                          >
+                            <div style={{ display: "flex" }}>
+                              {isHovered == index && (
+                                <button
+                                  className={styles.jobApplyNow}
+                                  style={{
+    
+                                    visibility:
+                                      isHovered === index
+                                        ? "visible"
+                                        : "hidden",
+                                
+                                  }}
+                                  onClick={() => {}}
+                                >
+                                  Apply Now
                                 </button>
-                            )}
-                          </div>
+                              )}
+                            </div>
                           </Link>
 
                           <div
-                            style={{
-                              background: "#FFD400",
-                              fontFamily: "Montserrat",
-                              borderRadius: "6px 6px 0px 0px",
-                              display:"flex",
-                              justifyContent:"center",
-                              alignContent:"center",
-                              alignItems:"center",
-                            }}
+                          className={styles.reactLogoMain}
                           >
                             {/* <img src={domain + "public/" + jobc.image} alt="" /> */}
 
                             {/* <img src={reactLogo} alt="" style={{height: 20, width: 20}} /> */}
-                            <img style={{ height: "110%",padding:"10px", width: "65%" }} src={"../../reactLogo.png"} alt="" />
+                            <img
+                            className={styles.reactLogo}
+                              src={"../../reactLogo.png"}
+                              alt=""
+                            />
                             {/* <div style={{ background: "#0D0D13", color:"white", padding:"0% 10% 10% 5%" }}>
                           <span style={{fontSize:"10px"}}>
                               OBS Technologia is one of the fastest-growing IT
@@ -290,18 +296,7 @@ function Careers() {
                           </div> */}
                           </div>
                           <div
-                            style={{
-                              background: "#0D0D13",
-                              color: "white",
-                              display: "flex",
-                              // height:"100%",
-                              borderRadius: "0 0 6px 6px",
-                              padding: "20% 10% 20% 7%",
-                              flexDirection: "column",
-                             minHeight:"195px",
-                             justifyContent:"center",
-                             alignItems:"center"
-                            }}
+                          className={styles.jobTitle}
                           >
                             {" "}
                             <h1 style={{ fontSize: "15px" }}>
@@ -328,7 +323,7 @@ function Careers() {
         </ErrorBoundary>
       ) : (
         <>
-          <Header />
+          <Header color="#ffd400" />
           <figure className={styles.center}>
             <Image src={error} alt="web" width={450} height={340} />
           </figure>

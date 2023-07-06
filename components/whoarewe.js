@@ -9,7 +9,7 @@ function WhoAreWe() {
             {" "}
             <p className={styles.yh}>WHO ARE WE?</p>
             <p className={styles.bh}>
-              We are one of the fastest growing IT family in Pakistan.
+              We build custom software that drives innovation and social impact
             </p>
             {/* <p className={styles.bh1}>
               We build custom software that drives innovation and social impact
@@ -29,9 +29,9 @@ function WhoAreWe() {
         </div>
         <div className={styles.wrwbg}>
           <h2>
-            “We are changing the way technology happens. We have over dozens of
-            mobile applications running on different Platforms across the
-            world.”
+            Unleash the value of your existing technology by re-architecting it
+            for the future. We help you modernize platforms and applications for
+            high performance, better user experience, scale, and security
           </h2>
           <p>
             Unleash the value of your existing technology by re-architecting it

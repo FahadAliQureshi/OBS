@@ -11,6 +11,12 @@ function Testimonials({ review, cname }) {
         <div className={styles.testimonials}>
           <h3 className={styles.th}>TESTIMONIALS</h3>
           <h2>People who have already worked with us!</h2>
+          <h4>
+            OBS Technologia team has an extremely well-rounded skill set across
+            IOS and Android mobile app development. The team was able to
+            successfully bring my designs to life, within IOS and Android
+            domain; by turning my wireframes and requirements into apps.{" "}
+          </h4>
           <div className={styles.quote}>
             <figure className={styles.iq}>
               <Image

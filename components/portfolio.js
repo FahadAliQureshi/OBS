@@ -25,7 +25,7 @@ function Portfolio() {
               },
             }}
           >
-            <Image src={portfolio} width={946} alt="portfolio " height={835} />
+            <Image src={portfolio} width={800} alt="portfolio " height={835} objectFit="contain"/>
           </motion.div>
           <div className={styles.pright}>
             <h4>OUR PORTFOLIO</h4>
