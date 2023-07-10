@@ -30,7 +30,7 @@ function WhoAreWe() {
         <div className={styles.wrwbg}>
           <h2>
             Unleash the value of your existing technology by re-architecting it
-            for the future. We help you modernize platforms and applications for
+           <br /> for the future. We help you modernize platforms and applications for
             high performance, better user experience, scale, and security
           </h2>
           <p>

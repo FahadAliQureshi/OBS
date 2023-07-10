@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+
+import portfolioPhones from "../public/portfolioPhones.png";
 import portfolio from "../public/portfolio.png";
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
@@ -25,7 +27,7 @@ function Portfolio() {
               },
             }}
           >
-            <Image src={portfolio} width={800} alt="portfolio " height={835} objectFit="contain"/>
+            <Image src={portfolioPhones} width={800} alt="portfolio " height={835} objectFit="contain"/>
           </motion.div>
           <div className={styles.pright}>
             <h4>OUR PORTFOLIO</h4>

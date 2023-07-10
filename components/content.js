@@ -9,7 +9,14 @@ import os from "../public/os.png";
 import styles from "../styles/Home.module.scss";
 import circle from "../public/circle.png";
 import mobiles from "../public/mobiles.png";
+import phoneSmall from "../public/phoneSmall.png";
+import smallDesktop from "../public/smallDesktop.png";
+import seoImage from "../public/seoImage.png";
+import aiImage from "../public/aiImage.png";
+import graphicImage from "../public/graphicImage.png";
+import cloudImageSahi from "../public/cloudImageSahi.png";
 import { motion } from "framer-motion";
+import { contains } from "jquery";
 function Content() {
   return (
     <>
@@ -34,14 +41,22 @@ function Content() {
                   },
                 }}
               >
-                <figure className={styles.bi}>
-                  <Image src={web} alt="web" width={72} height={72} />
+                <figure
+                  className={styles.bi}
+                 
+                >
+                  <Image
+                    src={phoneSmall}
+                    alt="web"
+                    width={35}
+                    height={35}
+                    objectFit={"contain"}
+                  />
                 </figure>
                 <div className={styles.detail}>
-                  <h4>Web Development</h4>
+                  <h4>App Development</h4>
                   <p>
-                    Our team creates web solutions including websites & web
-                    applications.
+                  We offer a full cycle of Android and iOS mobile application  design, integration, and management services.
                   </p>
                 </div>
               </motion.div>
@@ -82,17 +97,21 @@ function Content() {
                     className={styles.bi}
                     whileHover={{ scale: 1.1, transition: { duration: 0.1 } }}
                   >
-                    <Image src={gd} alt="web" width={72} height={72} />
+                    <Image src={seoImage} alt="web"       width={35}
+                    height={35}
+                    objectFit={"contain"} />
                   </figure>
                 </motion.div>
 
                 <div className={styles.detail}>
-                  <h4 className={styles.webd}>Graphic Design | UI/UX</h4>
-                  <h4 className={styles.webm}> UI/UX <br></br>  Graphic Design </h4>
+                  <h4 className={styles.webd}>Marketing / SEO </h4>
+                  <h4 className={styles.webm}>
+                    {" "}
+                    UI/UX <br></br> Graphic Design{" "}
+                  </h4>
                   <p>
-                    Without UI/UX an application is like a suit without a man.
-                    We create visually appealing, digital interfaces that
-                    attract and retain users.
+                    We offer a full cycle of Android & iOS mobile App design,
+                    integration, & management services.
                   </p>
                 </div>
               </motion.div>
@@ -114,13 +133,16 @@ function Content() {
                 }}
               >
                 <figure className={styles.bi}>
-                  <Image src={ad} alt="web" width={64.96} height={69.39} />
+                  <Image src={aiImage} alt="web"       width={35}
+                    height={35}
+                    objectFit={"contain"}/>
                 </figure>
                 <div className={styles.detail}>
-                  <h4>App Development</h4>
+                  <h4>AI Based Services</h4>
                   <p>
-                    We offer a full cycle of Android and iOS mobile application
-                    design, integration, and management services.
+                    Revolutionary software solutions powered by AI. We leverage
+                    cutting-edge technology to deliver intelligent, scalable,
+                    and personalized services for your business.
                   </p>
                 </div>
               </motion.div>
@@ -145,9 +167,11 @@ function Content() {
                   },
                 },
               }}
-            > <figure className={styles.circle}>
-              <Image src={circle} alt="circle" />
-            </figure>
+            >
+              {" "}
+              <figure className={styles.circle}>
+                <Image src={circle} alt="circle" />
+              </figure>
               <figure className={styles.mobile}>
                 <Image src={mobiles} alt="mobile" width={619} height={860} />
               </figure>
@@ -171,14 +195,16 @@ function Content() {
                 }}
               >
                 <figure className={styles.bi}>
-                  <Image src={marketing} alt="web" width={84} height={72} />
+                  <Image src={smallDesktop} alt="web"       width={35}
+                    height={35}
+                    objectFit={"contain"} />
                 </figure>
 
                 <div className={styles.detail}>
-                  <h4>Marketing</h4>
+                  <h4>Web Development</h4>
                   <p>
-                    Want to sell a product? Our Experts provide PPC, SMM, SMO
-                    services ensuring that we win the trust of Your Customers
+                    We provide web solutions including websites and web
+                    applications.
                   </p>
                 </div>
               </motion.div>
@@ -200,14 +226,16 @@ function Content() {
                 }}
               >
                 <figure className={styles.bi}>
-                  <Image src={seo} alt="web" width={83} height={73.56} />
+                  <Image src={graphicImage} alt="web"       width={35}
+                    height={35}
+                    objectFit={"contain"} />
                 </figure>
                 <div className={styles.detail}>
-                  <h4>SEO</h4>
+                  <h4>Graphic Design | UI/UX</h4>
                   <p>
-                    We understand different elements and their working in Search
-                    Engine Optimization. Hire us and turn the traffic into
-                    customers
+                    We focus on enhancing user experiences by designing
+                    intuitive interfaces and seamless interactions for websites,
+                    applications, and other digital platforms.
                   </p>
                 </div>
               </motion.div>
@@ -229,13 +257,15 @@ function Content() {
                 }}
               >
                 <figure className={styles.bi}>
-                  <Image src={os} alt="web" width={83} height={80} />
+                  <Image src={cloudImageSahi} alt="web"       width={35}
+                    height={35}
+                    objectFit={"contain"} />
                 </figure>
                 <div className={styles.detail}>
-                  <h4>Other Services</h4>
+                  <h4>Cloud Infrastructure</h4>
                   <p>
-                    We can deliver a broad range of quality products and
-                    solutions to meet your operational needs.
+                    Our team provides cloud infrastructure services to optimize
+                    monthly cloud costs and maximum business growth.
                   </p>
                 </div>
               </motion.div>

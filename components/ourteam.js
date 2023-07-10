@@ -41,9 +41,9 @@ function Ourteam() {
           <div className={styles.wrw}>
             {" "}
             <p className={styles.yhc}>MEET OUR TALENTED TEAM</p>
-            <p className={styles.bhc}>
+            {/* <p className={styles.bhc}>
               We are a group of talented individuals.
-            </p>
+            </p> */}
           </div>
           <div className={styles.row_container}>
             {team?.map((mem, index) => {

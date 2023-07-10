@@ -50,15 +50,6 @@ data = [
     ]
     console.log("datassss", data);
 
-    // const arrowStyles = {
-    //   position: "absolute",
-    //   top: "0",
-    //   bottom: "auto",
-    //   padding: ".4em",
-    //   zIndex: 2,
-    //   width: "55px",
-    //   height: "100%",
-    // };
     return (
       <div>
         <Carousel autoPlay>

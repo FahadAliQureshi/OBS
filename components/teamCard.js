@@ -37,7 +37,7 @@ function TeamCard(props) {
             priority
           />
         </figure>
-        <div className={styles.yc}>{props.num + 1}</div>
+        {/* <div className={styles.yc}>{props.num + 1}</div> */}
         <div className={styles.cn}>{props.data.name}</div>
         <div className={styles.cl}></div>
         <div className={styles.position}>{props.data.designation}</div>

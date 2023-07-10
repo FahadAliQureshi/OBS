@@ -3,8 +3,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Testimonials from "./testimonials";
 import Image from "next/image";
-import next from "../public/next.png";
-import prev from "../public/prev.png";
+import prevCarousel from "../public/prevCarousel.png";
+import nextCarousel from "../public/nextCarousel.png";
 
 export default class NextJsCarousel extends Component {
   constructor(props) {
@@ -54,7 +54,7 @@ export default class NextJsCarousel extends Component {
                 }}
               >
                 {" "}
-                <Image src={prev} alt="quote" width={52} height={52} smooth />
+                <Image src={prevCarousel} alt="quote" width={32} height={32} smooth />
               </button>
             )
           }
@@ -74,14 +74,18 @@ export default class NextJsCarousel extends Component {
                 }}
               >
                 {" "}
-                <Image src={next} alt="quote" width={52} height={52} />
+                <Image src={nextCarousel} alt="quote" width={32} height={32} />
               </button>
             )
           }
           showStatus={false}
           showThumbs={false}
+          slidesToShow={2}
+          slidesToScroll={2} 
+          // centerSlidePercentage={50}
           // autoPlay={true}
           style={{ ...arrowStyles, left: 15 }}
+          // itemWidth={50} // Add this line
         >
           {data?.map((child, index) => {
             return (
@@ -90,6 +94,7 @@ export default class NextJsCarousel extends Component {
                 cname={child.company}
                 key={index}
               />
+              
             );
           })}
         </Carousel>
