@@ -13,7 +13,7 @@ function Ourteam() {
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      "https://globaltechnologia.org/webAdmin/public/index.php/api/teamshow"
+      "https://globaltechnologia.com/webAdmin/public/index.php/api/teamshow"
     )
       .then((res) => {
         setIsLoading(true);

@@ -1,5 +1,68 @@
 /** @format */
 /* styles.scss */
+//resources
+.backGround{
+  background-color: #333333;
+  // height: 580px;
+  padding: 100px 0px;
+  margin-top: 100px;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  h1{
+    color: #FFD400;
+    font-weight: 500;
+    font-size: 20px;
+    // padding-top: 85px;
+    margin-bottom: 30px;
+  }
+  .counter{
+    display: flex;
+    color: #f3f3f3;
+    justify-content: center;
+  }
+  .rowOne{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .font{
+      font-size: 30px;
+    }
+  }
+  .rowTwo{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .font{
+      font-size: 30px;
+    }
+  }
+  .counterRowTwo{
+    text-align: center;
+    display: flex;
+    gap: 5%;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.counterRow{
+  text-align: center;
+  color: white;
+  display: flex;
+  gap: 100px;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  width: 100%;
+}
+
 .inputsi[type="radio"] {
   -webkit-appearance: none;
   width: 19px;
@@ -497,7 +560,7 @@ $gold: #dba514;
   width: 90%;
 
   .pleft {
-    position: absolute;
+    // position: absolute;
     display: flex;
     width: 946px;
     left: 0;
@@ -629,26 +692,24 @@ $gold: #dba514;
 }
 
 // Carousel
-.carousel .slider-wrapper ul {
-  width: 50% !important; /* Adjust the width here */
-}
+// .carousel .slider-wrapper.axis-horizontal 
 
-.carousel {
-  overflow: hidden;
-}
-.inner {
-  white-space: nowrap;
-}
-.carousel_item {
-  display: inline-flex;
-  align-items: center;
-  height: 200px;
-  background-color: #dba514;
-  color: #000000;
-}
-.carousel-status {
-  display: hidden;
-}
+
+// .inner {
+//   white-space: nowrap;
+// }
+// .carousel_item {
+//   display: inline-flex;
+//   align-items: center;
+//   height: 200px;
+//   background-color: #dba514;
+//   color: #000000;
+// }
+// .carousel-status {
+//   display: hidden;
+// }
+
+
 
 // OUR TEAM
 .ourteam {
@@ -677,11 +738,12 @@ $gold: #dba514;
     justify-content: center;
     flex-wrap: wrap;
     gap: 25px;
-    padding: 101px 0px 0px 0px;
+    padding: 0px 0px 0px 0px!important;
     align-items: flex-start;
+    align-items: center;
 
     .card {
-      width: 17%;
+      width: 17%!important;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -689,11 +751,12 @@ $gold: #dba514;
       position: relative;
 
       .picture {
-        max-width: 301px;
-        width: 301px;
+        max-width: 130px;
+        width: 130px;
         position: relative;
-        height: 301px;
+        height: 270px;
       }
+ 
       .yc {
         width: 72px;
         height: 72px;
@@ -729,21 +792,27 @@ $gold: #dba514;
 // CONTACT US
 .contact {
   width: 100%;
-  background-color: $base-color;
+  // background-color: $base-color;
+  background-image: url('../public/ContactUs.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
-  margin: 200px 0px 140px 0px;
-  padding: 0px 18px;
+  margin: 50px 0px 50px 0px!important;
+  padding: 50px 90px!important;
+  // background-color: #FFD400;
 
-  .waves {
-    width: 558px;
-    height: 558px;
-    position: relative;
-  }
+  // .waves {
+  //   width: 558px;
+  //   height: 558px;
+  //   position: relative;
+  // }
   .contact_us {
-    position: absolute;
-    top: 76px;
-    width: 570px;
-    left: 85px;
+    // position: absolute;
+    // top: 76px;
+    // width: 570px;
+    // left: 85px;
+color: #f3f3f3;
     h3 {
       font-size: 48px;
       font-weight: 600;
@@ -761,13 +830,21 @@ $gold: #dba514;
 .contl {
   border-bottom: 1px solid $black;
   width: 100%;
+  // background-image: url('../public/ContactUs.png');
+}
+.contact_wrapper{
+   width: 100%;
+  // background-image: url('../public/ContactUs.png');
+
 }
 .contact_cell {
-  position: absolute;
-  right: 0;
-  top: -170px;
-  width: 571px;
-  height: 741px;
+  // position: absolute;
+  // right: 0;
+  // top: -170px;
+  // width: 571px;
+  // height: 741px;
+  margin-top: 74px;
+  width: 28%!important;
 }
 .form {
   .row {
@@ -804,7 +881,8 @@ $gold: #dba514;
 }
 .formtbtn {
   font-weight: 600;
-  background-color: $white;
+  width: 100%;
+  background-color: #ffd400;
   color: $black;
   padding: 18px 63px 17px 63px;
   font-family: "Montserrat";
@@ -812,6 +890,7 @@ $gold: #dba514;
   line-height: 21.94px;
   border: none;
   border-radius: 40px;
+
 }
 
 // FOOTER
@@ -1124,7 +1203,7 @@ $gold: #dba514;
       width: 500px;
       height: 540px;
       object-fit: contain;
-      margin-right: -1000px;
+      // margin-right: -1000px;
     }
     .pright {
       padding: 55px 125px 0px 20px;
@@ -1204,10 +1283,16 @@ $gold: #dba514;
       position: relative;
 
       .picture {
-        max-width: 215px !important;
-        width: 215px !important;
+        max-width: 130px !important;
+        width: 130px !important;
         position: relative;
-        height: 240px;
+        height: 270px;
+      }
+      .increasedWidth{
+        max-width: 200px!important;
+        width: 200px!important;
+        position: relative;
+        height: 270px;
       }
       .yc {
         width: 55px !important;
@@ -2321,12 +2406,13 @@ $gold: #dba514;
     }
   }
   .header {
+width: 100%;
     .hlogo {
       position: relative;
       width: 74px !important;
       height: 41px !important;
     }
-    margin: 20px 40 !important;
+    // margin: 20px 40 !important;
     width: calc(100% - 80px);
     // margin: 42px 194px 0px 193px;
     max-width: 1920px;
@@ -2834,6 +2920,12 @@ $gold: #dba514;
           position: relative;
           height: 139px !important;
         }
+        .increasedWidth{
+          max-width: 200px!important;
+          width: 200px!important;
+          position: relative;
+          height: 301px;
+        }
         .yc {
           width: 72px;
           height: 72px;
@@ -2876,7 +2968,7 @@ $gold: #dba514;
   .contact {
     width: 100%;
     display: flex;
-    background-color: $base-color;
+    // background-color: $base-color;
     position: relative;
     margin: 23px 0px 40px 0px;
     padding: 0px 0px 0px 31px;
@@ -3254,6 +3346,67 @@ $gold: #dba514;
 }
 
 @media only screen and (max-width: 450px) {
+
+
+//resources
+.backGround{
+  background-color: #333333;
+  // height: 1030px;
+  padding: 100px 0px;
+  margin-top: 100px;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  h1{
+    color: #FFD400;
+    font-weight: 500;
+    font-size: 20px;
+    // padding-top: 75px;
+    margin-bottom: 30px;
+  }
+  .counter{
+    display: flex;
+    color: #f3f3f3;
+    justify-content: center;
+  }
+  .rowOne{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .counterRow{
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    justify-content: center;
+  }
+  .counterRowTwo{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.rowTwo{
+  width: 100%!important;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .font{
+    font-size: 30px;
+  }
+}
+
   .hire {
     .buttns {
       padding: 4px 57px !important;
@@ -3311,13 +3464,14 @@ $gold: #dba514;
     }
   }
   .header {
+    width: 100%;
     .hlogo {
       position: relative;
       width: 74px !important;
       height: 41px !important;
     }
     margin: 20px 40 !important;
-    width: calc(100% - 80px);
+    // width: calc(100% - 80px);
     // margin: 42px 194px 0px 193px;
     max-width: 1920px;
     display: flex;
@@ -3780,25 +3934,35 @@ $gold: #dba514;
       display: none;
     }
     .row_container {
+      
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
-      gap: 20px;
+      // gap: 60px;
       flex-wrap: nowrap;
-      height: 370px;
+      height: 270px;
       overflow-y: scroll;
       flex-direction: row;
       -ms-overflow-style: none;
-
+      gap: 14%;
+align-items: baseline;
       .card {
+        margin-top: 50px;
+        margin-left: 15%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 50%;
+        width: 100%;
         position: relative;
 
         .picture {
+          max-width: 142px !important;
+          width: 142px !important;
+          position: relative;
+          height: 142px !important;
+        }
+        .increasedWidth{
           max-width: 139px !important;
           width: 139px !important;
           position: relative;
@@ -3821,6 +3985,8 @@ $gold: #dba514;
           line-height: 14.38px;
           color: $gold;
           padding-bottom: 8px;
+          width: 200%!important;
+text-align: center;
         }
         .cl {
           width: 78px;
@@ -3832,6 +3998,8 @@ $gold: #dba514;
           font-size: 12px !important;
           text-align: center;
           line-height: 14.94px;
+          width: 200%;
+          text-align: center;
         }
       }
     }
@@ -4281,7 +4449,8 @@ $gold: #dba514;
 }
 @media only screen and (max-width: 325px) {
   .header {
-    width: calc(100% - 10px);
+    // width: calc(100% - 10px);
+    width: 100%;
   }
   .wrapper {
     width: calc(100% - 10px);

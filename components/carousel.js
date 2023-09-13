@@ -1,10 +1,14 @@
 import React, { Component, useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import styles from "../components/custom-carousel.module.css";
+import Slider from 'react-slick';
 import { Carousel } from "react-responsive-carousel";
 import Testimonials from "./testimonials";
 import Image from "next/image";
 import prevCarousel from "../public/prevCarousel.png";
 import nextCarousel from "../public/nextCarousel.png";
+// import '../node_modules/react-responsive-carousel/lib/styles/carousel.min.css';
+import '../components/custom-carousel.module.css'; 
 
 export default class NextJsCarousel extends Component {
   constructor(props) {
@@ -15,7 +19,7 @@ export default class NextJsCarousel extends Component {
     };
   }
   componentDidMount() {
-    fetch("https://globaltechnologia.org/webAdmin/public/index.php/api/teamshow")
+    fetch("https://globaltechnologia.com/webAdmin/public/index.php/api/teamshow")
       .then((response) => response.json())
       .then((data) => this.setState({ data }));
     console.log("SSS", this.state);
@@ -34,10 +38,15 @@ export default class NextJsCarousel extends Component {
       zIndex: 2,
       width: "55px",
       height: "100%",
+      
     };
+
+    
     return (
-      <div>
+      <div className="custom-carousel-container">
         <Carousel
+        // showThumbs={2}
+        // centerSlidePercentage={50}
           renderArrowPrev={(onClickHandler, hasPrev, label) =>
             hasPrev && (
               <button
@@ -51,6 +60,7 @@ export default class NextJsCarousel extends Component {
                   backgroundColor: "transparent",
                   border: "none",
                   margin: "auto 74px ",
+                  
                 }}
               >
                 {" "}
@@ -80,8 +90,8 @@ export default class NextJsCarousel extends Component {
           }
           showStatus={false}
           showThumbs={false}
-          slidesToShow={2}
-          slidesToScroll={2} 
+          // slidesToShow={1}
+          slidesToScroll={1}
           // centerSlidePercentage={50}
           // autoPlay={true}
           style={{ ...arrowStyles, left: 15 }}
@@ -89,11 +99,17 @@ export default class NextJsCarousel extends Component {
         >
           {data?.map((child, index) => {
             return (
+              // <div
+              // style={{
+              //   width:"50%"
+              // }}
+              // >
               <Testimonials
                 review={child.discription}
                 cname={child.company}
                 key={index}
               />
+              // </div>
               
             );
           })}

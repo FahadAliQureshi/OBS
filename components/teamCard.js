@@ -6,12 +6,16 @@ import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 import styles from "../styles/Home.module.scss";
+import { data } from "jquery";
 
 function TeamCard(props) {
   console.log("okkkkk", props);
   var i = 0;
   useEffect(() => {}, []);
   const domain = "https://globaltechnologia.org/webAdmin/public/";
+
+  console.log("threee", props.data.id_assign == 3)
+   
   return (
     <>
       <motion.div
@@ -19,13 +23,13 @@ function TeamCard(props) {
         className={styles.card}
         whileHover={{
           // scale: 1,
-          transition: { duration: 0.1 },
-          boxShadow: `rgba(100, 100, 111, 0.2) 0px 7px 29px 0px`,
-          padding: `0px 0px 10px 0px`,
-          borderRadius: 30,
+          // transition: { duration: 0.1 },
+          // boxShadow: `rgba(100, 100, 111, 0.2) 0px 7px 29px 0px`,
+          // padding: `0px 0px 10px 0px`,
+          // borderRadius: 30,
         }}
       >
-        <figure className={styles.picture}>
+        <figure className={props.data.id_assign == 3 ? styles.increasedWidth : styles.picture}>
           <Image
             loader={() => {
               return domain + props.data.url;

@@ -1,0 +1,9 @@
+/* custom-carousel.css */
+.custom-carousel-container {
+    width: 80%; /* Adjust the width as per your requirement */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Display two slides per row */
+    grid-gap: 10px; /* Adjust the gap between slides as needed */
+  }
+  

@@ -10,6 +10,7 @@ import Carousel from "../components/carousel";
 import Ourteam from "../components/ourteam";
 import Contact from "../components/contact";
 import Footer from "../components/footer";
+import Resources from "../components/Resources";
 import { motion } from "framer-motion";
 // import banner from '../public/'
 import Blur from "../components/blur";
@@ -74,6 +75,7 @@ console.log("router",router)
         <Portfolio />
         <Carousel />
         <Ourteam />
+        <Resources/>
         <Contact id="contact"/>
         <Footer />
         {/* <Testimonials /> */}

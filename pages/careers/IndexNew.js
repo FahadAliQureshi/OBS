@@ -22,7 +22,7 @@ function Careers() {
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://globaltechnologia.org/webAdmin/public/index.php/api/jobshow")
+    fetch("https://globaltechnologia.com/webAdmin/public/index.php/api/jobshow")
       .then((res) => {
         setIsLoading(true);
         if (res.status == 200) {
@@ -66,6 +66,7 @@ function Careers() {
             },
           }}
         >
+          
           <Blur />
         </motion.div>
       ) : job.length != 0 ? (

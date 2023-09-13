@@ -251,7 +251,7 @@ function JobDetails() {
                       }}
                     >
                       <ul>
-                        <li>Must have Bachelor's Degree in relevant field</li>
+                        <li>Must have Bachelor&apos;s Degree in relevant field</li>
                         <li>
                           Minimum 1-2 years of professional experience working
                           with React Native.
@@ -345,7 +345,7 @@ function JobDetails() {
                       }}
                     >
               <ul>
-                        <li>Must have Bachelor's Degree in relevant field</li>
+                        <li>Must have Bachelor&apos;s Degree in relevant field</li>
                         <li>
                           Minimum 1-2 years of professional experience working
                           with HR Operations Executive.
@@ -435,7 +435,7 @@ function JobDetails() {
                       }}
                     >
                        <ul>
-                        <li>Must have Bachelor's Degree in relevant field</li>
+                        <li>Must have Bachelor&apos;s Degree in relevant field</li>
                         <li>
                           Minimum 1-2 years of professional experience working
                           with React Native.
@@ -526,7 +526,7 @@ function JobDetails() {
                       }}
                     >
                         <ul>
-                        <li>Must have Bachelor's Degree in relevant field</li>
+                        <li>Must have Bachelor&apos;s Degree in relevant field</li>
                         <li>
                           Minimum 1-2 years of professional experience working
                           with React Native.
@@ -616,7 +616,7 @@ function JobDetails() {
                       }}
                     >
                        <ul>
-                        <li>Must have Bachelor's Degree in relevant field</li>
+                        <li>Must have Bachelor&apos;s Degree in relevant field</li>
                         <li>
                           Minimum 1-2 years of professional experience working
                           with React Native.
@@ -706,7 +706,7 @@ function JobDetails() {
                       }}
                     >
                       <ul>
-                        <li>Must have Bachelor's Degree in relevant field</li>
+                        <li>Must have Bachelor&apos;s Degree in relevant field</li>
                         <li>
                           Minimum 1-2 years of professional experience working
                           with React Native.
