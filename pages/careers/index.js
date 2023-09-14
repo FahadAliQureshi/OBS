@@ -17,8 +17,9 @@ const reactLogo = require("../../public/reactLogo.png");
 
 function Careers() {
   const [job, setJob] = useState([]);
+  
   const [show, setShow] = useState("");
-  const domain = "https://globaltechnologia.org/webAdmin/";
+  const domain = "https://globaltechnologia.com/webAdmin/";
 
   const [isHovered, setIsHovered] = useState(-1);
 
@@ -33,7 +34,7 @@ function Careers() {
   const [isLoading, setIsLoading] = useState(false);
   // useEffect(() => {
   //   setIsLoading(true);
-  //   fetch("https://globaltechnologia.org/webAdmin/public/index.php/api/jobshow")
+  //   fetch("https://globaltechnologia.com/webAdmin/public/index.php/api/jobshow")
   //     .then((res) => {
   //       // setIsLoading(true);
   //       if (res.status == 200) {
@@ -64,7 +65,7 @@ function Careers() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://globaltechnologia.org/webAdmin/public/index.php/api/jobshow")
+    fetch("https://globaltechnologia.com/webAdmin/public/index.php/api/jobshow")
       .then((res) => {
         if (res.status === 200) {
           return res.json();
@@ -86,7 +87,6 @@ function Careers() {
         }, 2000);
       });
   }, []);
-  
 
   return (
     <>
@@ -116,12 +116,8 @@ function Careers() {
                 We are always looking out for Talented Individuals.<br></br>{" "}
                 Check out our recent job openings!
               </p>
-              <div
-              className={styles.indexMain}
-              >
-                <div 
-                className={styles.jobs}
-                >
+              <div className={styles.indexMain}>
+                <div className={styles.jobs}>
                   {job?.map((jobc, index) => {
                     console.log("okkkkkkkkkkkkkk", jobc);
                     return (
@@ -238,10 +234,11 @@ function Careers() {
                       //yhn tk
                       <>
                         <div
-
                           style={{
                             display: "flex",
                             flexDirection: "column",
+                            width:"250px" ,
+                            marginBottom:"30px",
                             filter:
                               isHovered === index ? "brightness(70%)" : "none",
                           }}
@@ -252,7 +249,8 @@ function Careers() {
                         >
                           <Link
                             href={{
-                              pathname: "/careers/JobDetails",
+                              pathname: `/careers/JobDetails`,
+                              query:jobc,
                               // the data
                             }}
                           >
@@ -261,12 +259,10 @@ function Careers() {
                                 <button
                                   className={styles.jobApplyNow}
                                   style={{
-    
                                     visibility:
                                       isHovered === index
                                         ? "visible"
                                         : "hidden",
-                                
                                   }}
                                   onClick={() => {}}
                                 >
@@ -276,14 +272,12 @@ function Careers() {
                             </div>
                           </Link>
 
-                          <div
-                          className={styles.reactLogoMain}
-                          >
+                          <div className={styles.reactLogoMain}>
                             {/* <img src={domain + "public/" + jobc.image} alt="" /> */}
 
                             {/* <img src={reactLogo} alt="" style={{height: 20, width: 20}} /> */}
                             <img
-                            className={styles.reactLogo}
+                              className={styles.reactLogo}
                               src={"../../reactLogo.png"}
                               alt=""
                             />
@@ -295,9 +289,7 @@ function Careers() {
                             </span>
                           </div> */}
                           </div>
-                          <div
-                          className={styles.jobTitle}
-                          >
+                          <div className={styles.jobTitle}>
                             {" "}
                             <h1 style={{ fontSize: "15px" }}>
                               {/* React Native Developer */}

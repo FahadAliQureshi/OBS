@@ -35,7 +35,7 @@ function Nav(props) {
         </figure>
         <ul className={styles.uppernav}>
           <li onClick={navHandle}>
-            <Link href="/">Agency</Link>
+            <Link href="/">Home</Link>
           </li>
           <li onClick={navHandle}>
             <Link href="/portfolio">Portfolio</Link>

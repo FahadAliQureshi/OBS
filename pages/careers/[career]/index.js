@@ -21,16 +21,16 @@ function Career() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(ids),
   };
-  
+
   useEffect(() => {
     console.log("doom", id);
     console.log("doom", ids);
     setIsLoading(true);
     setId(id);
- 
+
     console.log("dooms");
     fetch(
-      "https://globaltechnologia.org/webAdmin/public/index.php/api/jobshowbyid",
+      "https://globaltechnologia.com/webAdmin/public/index.php/api/jobshowbyid",
       requestOptions
     )
       .then((res) => {
@@ -82,7 +82,7 @@ function Career() {
 
   return (
     <>
-       <Header color="#ffd400"/>
+      <Header color="#ffd400" />
       <div className={styles.wrapper}>
         <div className={styles.contain}>
           <div className={styles.heading}>

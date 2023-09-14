@@ -68,7 +68,7 @@ function Header(props) {
                 border: `1px solid #ffd400`,
               }}
             >
-              <Link href="/">Agency</Link>
+              <Link href="/">Home</Link>
             </motion.li>
           ) : (
             <motion.li
@@ -81,7 +81,7 @@ function Header(props) {
                 border: `1px solid #ffd400`,
               }}
             >
-              <Link href="/">Agency</Link>
+              <Link href="/">Home</Link>
             </motion.li>
           )}
           {router.pathname == "/portfolio" ? (

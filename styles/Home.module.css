@@ -164,6 +164,7 @@
 }
 
 .content {
+
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -624,7 +625,7 @@
 .footer {
   width: 100%;
   display: flex;
-  margin: 114px 0px 0px 0px;
+  margin: 114px 0px 0px 0px ;
   flex-direction: column;
 }
 .footer .seprator {
@@ -646,7 +647,7 @@
   font-size: 24px;
   line-height: 45px;
   width: 380px;
-  margin: 0px 30px 0px 0px;
+  margin: 0px 30px 0px 0px ;
 }
 .footer .foot {
   display: flex;
@@ -1107,7 +1108,7 @@
     font-size: 28px;
   }
   .footer .b2 p {
-    margin: 0px 32px 0px 30px;
+    margin: 0px 32px 0px 30px !important;
     font-size: 18px;
     line-height: 29px;
   }
@@ -2733,6 +2734,7 @@
   .footer_row {
     display: flex;
     flex-direction: column;
+    margin-top: 40px !important;
   }
   .seprator {
     margin-top: 24px;
@@ -3649,6 +3651,7 @@
   .footer_row {
     display: flex;
     flex-direction: column;
+    margin-top: 40px !important;
   }
   .seprator {
     margin-top: 24px;
@@ -4272,6 +4275,7 @@
   width: 50%;
   margin: 0 auto;
   border: none;
+  cursor:"pointer"
 }
 
 .contain {

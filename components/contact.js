@@ -56,7 +56,7 @@ function Contact() {
       };
 
       fetch(
-        "https://globaltechnologia.org/webAdmin/public/index.php/api/contactus",
+        "https://globaltechnologia.com/webAdmin/public/index.php/api/contactus",
         requestOptions
       )
         .then((response) => response.json())
@@ -176,7 +176,8 @@ function Contact() {
       </motion.div> */}
 
       <div
-        className={styles.contact}
+        className={styles.contact }
+        id='contact'
         whileHover={{
           scale: 1.05,
           transition: { duration: 0.1 },

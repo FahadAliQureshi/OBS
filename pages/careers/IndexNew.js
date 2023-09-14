@@ -17,7 +17,7 @@ import Image from "next/image";
 function Careers() {
   const [job, setJob] = useState([]);
   const [show, setShow] = useState("");
-  const domain = "https://globaltechnologia.org/webAdmin/";
+  const domain = "https://globaltechnologia.com/webAdmin/";
 
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
@@ -66,7 +66,6 @@ function Careers() {
             },
           }}
         >
-          
           <Blur />
         </motion.div>
       ) : job.length != 0 ? (

@@ -13,15 +13,20 @@ import Blur from "../../components/blur";
 import { motion } from "framer-motion";
 import error from "../../public/err.png";
 import Image from "next/image";
+import axios from "axios";
 import JobsHeader from "../../components/JobsHeader";
-import { RadioGroup, RadioButton } from 'react-radio-buttons';
+import { RadioGroup, RadioButton } from "react-radio-buttons";
+import { useRouter } from "next/router";
 
 const reactLogo = require("../../public/reactLogo.png");
 
 function JobDetails() {
+  const router = useRouter();
+  const data = router.query;
+  console.log("JOB DETAILS ===============",data?.jobData)
   const [job, setJob] = useState([]);
   const [show, setShow] = useState("");
-  const domain = "https://globaltechnologia.org/webAdmin/";
+  const domain = "https://globaltechnologia.com/webAdmin/";
 
   const [isHovered, setIsHovered] = useState(false);
   const [selectedJob, setSelectedJob] = useState("Job Role 1");
@@ -48,7 +53,7 @@ function JobDetails() {
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://globaltechnologia.org/webAdmin/public/index.php/api/jobshow")
+    fetch("https://globaltechnologia.com/webAdmin/public/index.php/api/jobshow")
       .then((res) => {
         if (res.status === 200) {
           return res.json();
@@ -63,7 +68,7 @@ function JobDetails() {
           setJob(jobData);
           setTimeout(() => {
             setIsLoading(false);
-          }, 2000); 
+          }, 2000);
         }
       })
       .catch((error) => {
@@ -80,6 +85,8 @@ function JobDetails() {
       }
     }
   }, [job]);
+
+ 
 
   return (
     <>
@@ -101,107 +108,112 @@ function JobDetails() {
       ) : job.length != 0 ? (
         <ErrorBoundary>
           <Header color="#000000" />
+          <div className={styles.heading}>
+            <h3
+              className={styles.title}
+            >{`${data.title} - ${data.type}/${data.jobeMode}`}</h3>
+            <hr className={styles.hr1} />
+            <h2 className={styles.desc}>
+              {`${data.domain} - ${data.type}`} - Islamabad - Pakistan
+            </h2>
+          </div>
+          <div style={{overflowX:"auto"}}>
 
-          <div >
-            <div
-            className={styles.containerOne}
-            >
+          <div style={{minWidth:"1000px"}}>
+            <div className={styles.containerOne}>
               {/* jobheader */}
 
               <div
-              className={styles.innerContainerOne}
+                className={styles.innerContainerOne}
                 style={{
                   height: selectedJob === "Job Role 2" ? "850px" : "",
                 }}
               >
                 {/* this */}
-        
 
-
-                <div
-                  className={styles.jobInput}
-                >
+                <div className={styles.jobInput}>
                   <input
-                   className={styles.inputsi} 
+                    className={styles.inputsi}
                     type="radio"
-                  
                     value="Job1"
                     checked={selectedJob2 === "Job1"}
                     onChange={() => handleJob("Job1")}
                   />
-                  <label style={{width: "80%",}} htmlFor="">
+                  <label style={{ width: "80%" }} htmlFor="">
                     {" "}
                     React Native Developer
                   </label>
                 </div>
-                <div
-                 className={styles.jobInput}
-
-                >
+                <div className={styles.jobInput}>
                   <input
-                   className={styles.inputsi} 
+                    className={styles.inputsi}
                     type="radio"
-             
                     value="Job1"
                     checked={selectedJob2 === "HR Operations Executive"}
                     onChange={() => handleJob("HR Operations Executive")}
                   />
-                  <label style={{width: "80%",}} htmlFor=""> HR Operations Executive</label>
+                  <label style={{ width: "80%" }} htmlFor="">
+                    {" "}
+                    HR Operations Executive
+                  </label>
                 </div>
 
-                <div
-                 className={styles.jobInput}
-                >
+                <div className={styles.jobInput}>
                   <input
-                  className={styles.inputsi} 
+                    className={styles.inputsi}
                     type="radio"
-                  
                     value="Job1"
                     checked={selectedJob2 === "Job3"}
                     onChange={() => handleJob("Job3")}
                   />
-                
-                <label style={{width: "80%",}} htmlFor=""> React Native Developer</label>
+
+                  <label style={{ width: "80%" }} htmlFor="">
+                    {" "}
+                    React Native Developer
+                  </label>
                 </div>
-                <div
-                  className={styles.jobInput}
-                >
+                <div className={styles.jobInput}>
                   <input
-                   className={styles.inputsi} 
+                    className={styles.inputsi}
                     type="radio"
                     style={{ borderRadius: 9999 }}
                     value="Job1"
                     checked={selectedJob2 === "Job4"}
                     onChange={() => handleJob("Job4")}
                   />
-                  <label style={{width: "80%",}} htmlFor=""> HR Operations Executive</label>
+                  <label style={{ width: "80%" }} htmlFor="">
+                    {" "}
+                    HR Operations Executive
+                  </label>
                 </div>
 
-                <div
-                 className={styles.jobInput}
-                >
+                <div className={styles.jobInput}>
                   <input
-                   className={styles.inputsi} 
+                    className={styles.inputsi}
                     type="radio"
                     style={{ borderRadius: 9999 }}
                     value="Job1"
                     checked={selectedJob2 === "Job5"}
                     onChange={() => handleJob("Job5")}
                   />
-                  <label style={{width: "80%",}} htmlFor=""> React Native Developer</label>
+                  <label style={{ width: "80%" }} htmlFor="">
+                    {" "}
+                    React Native Developer
+                  </label>
                 </div>
-                <div
-                 className={styles.jobInput}
-                >
+                <div className={styles.jobInput}>
                   <input
-                   className={styles.inputsi} 
+                    className={styles.inputsi}
                     type="radio"
                     style={{ borderRadius: 9999 }}
                     value="Job1"
                     checked={selectedJob2 === "Job6"}
                     onChange={() => handleJob("Job6")}
                   />
-                  <label style={{width: "80%",}} htmlFor=""> HR Operations Executive</label>
+                  <label style={{ width: "80%" }} htmlFor="">
+                    {" "}
+                    HR Operations Executive
+                  </label>
                 </div>
               </div>
               <div
@@ -213,10 +225,7 @@ function JobDetails() {
                   height: "18.2%",
                 }}
               >
-                <div
-                className={styles.jobDescMain}
-
-                >
+                <div className={styles.jobDescMain}>
                   <JobsHeader
                     selectedJob={selectedJob}
                     setSelectedJob={setSelectedJob}
@@ -226,13 +235,12 @@ function JobDetails() {
                   <div
                     className="job1"
                     style={{
-                     
                       display: selectedJob2 === "Job1" ? "block" : "none",
                       background: "white",
                     }}
                   >
                     <div
-                    className={styles.firstDesc}
+                      className={styles.firstDesc}
                       style={{
                         display: selectedJob === "Job Role 1" ? "flex" : "none",
                       }}
@@ -245,13 +253,13 @@ function JobDetails() {
                     <div
                       className={styles.require}
                       style={{
-                        
                         display: selectedJob === "Job Role 2" ? "flex" : "none",
-                     
                       }}
                     >
                       <ul>
-                        <li>Must have Bachelor&apos;s Degree in relevant field</li>
+                        <li>
+                          Must have Bachelor&apos;s Degree in relevant field
+                        </li>
                         <li>
                           Minimum 1-2 years of professional experience working
                           with React Native.
@@ -288,28 +296,20 @@ function JobDetails() {
                     </div>
 
                     <div
-                    className={styles.thirdDesc}
+                      className={styles.thirdDesc}
                       style={{
                         display:
                           selectedJob === "Job Role 3" ? "block" : "none",
                       }}
                     >
-                      <div 
-                      className={styles.salary}
-                      >
+                      <div className={styles.salary}>
                         Salary Range:{" "}
-                        <div
-                        className={styles.market}>
-                          Market Competitive
-                        </div>{" "}
+                        <div className={styles.market}>Market Competitive</div>{" "}
                       </div>
-                      <div
-                        className={styles.salary}>
+                      <div className={styles.salary}>
                         {" "}
                         Location:{" "}
-                        <div 
-                         className={styles.market}>
-                        
+                        <div className={styles.market}>
                           I-8 Markaz Islamabad
                         </div>{" "}
                       </div>
@@ -326,7 +326,7 @@ function JobDetails() {
                     }}
                   >
                     <div
-                            className={styles.firstDesc}
+                      className={styles.firstDesc}
                       style={{
                         display: selectedJob === "Job Role 1" ? "flex" : "none",
                       }}
@@ -337,15 +337,15 @@ function JobDetails() {
                     </div>
 
                     <div
-                    className={styles.require}
+                      className={styles.require}
                       style={{
-    
                         display: selectedJob === "Job Role 2" ? "flex" : "none",
-               
                       }}
                     >
-              <ul>
-                        <li>Must have Bachelor&apos;s Degree in relevant field</li>
+                      <ul>
+                        <li>
+                          Must have Bachelor&apos;s Degree in relevant field
+                        </li>
                         <li>
                           Minimum 1-2 years of professional experience working
                           with HR Operations Executive.
@@ -382,28 +382,20 @@ function JobDetails() {
                     </div>
 
                     <div
-                    className={styles.thirdDesc}
+                      className={styles.thirdDesc}
                       style={{
                         display:
                           selectedJob === "Job Role 3" ? "block" : "none",
                       }}
                     >
-                      <div 
-                      className={styles.salary}
-                      >
+                      <div className={styles.salary}>
                         Salary Range:{" "}
-                        <div
-                        className={styles.market}>
-                          Market Competitive
-                        </div>{" "}
+                        <div className={styles.market}>Market Competitive</div>{" "}
                       </div>
-                      <div
-                        className={styles.salary}>
+                      <div className={styles.salary}>
                         {" "}
                         Location:{" "}
-                        <div 
-                         className={styles.market}>
-                        
+                        <div className={styles.market}>
                           I-8 Markaz Islamabad
                         </div>{" "}
                       </div>
@@ -417,7 +409,7 @@ function JobDetails() {
                     }}
                   >
                     <div
-                     className={styles.firstDesc}
+                      className={styles.firstDesc}
                       style={{
                         display: selectedJob === "Job Role 1" ? "flex" : "none",
                       }}
@@ -428,14 +420,15 @@ function JobDetails() {
                     </div>
 
                     <div
-                    className={styles.require}
+                      className={styles.require}
                       style={{
-        
                         display: selectedJob === "Job Role 2" ? "flex" : "none",
                       }}
                     >
-                       <ul>
-                        <li>Must have Bachelor&apos;s Degree in relevant field</li>
+                      <ul>
+                        <li>
+                          Must have Bachelor&apos;s Degree in relevant field
+                        </li>
                         <li>
                           Minimum 1-2 years of professional experience working
                           with React Native.
@@ -472,28 +465,20 @@ function JobDetails() {
                     </div>
 
                     <div
-                    className={styles.thirdDesc}
+                      className={styles.thirdDesc}
                       style={{
                         display:
                           selectedJob === "Job Role 3" ? "block" : "none",
                       }}
                     >
-                      <div 
-                      className={styles.salary}
-                      >
+                      <div className={styles.salary}>
                         Salary Range:{" "}
-                        <div
-                        className={styles.market}>
-                          Market Competitive
-                        </div>{" "}
+                        <div className={styles.market}>Market Competitive</div>{" "}
                       </div>
-                      <div
-                        className={styles.salary}>
+                      <div className={styles.salary}>
                         {" "}
                         Location:{" "}
-                        <div 
-                         className={styles.market}>
-                        
+                        <div className={styles.market}>
                           I-8 Markaz Islamabad
                         </div>{" "}
                       </div>
@@ -507,7 +492,7 @@ function JobDetails() {
                     }}
                   >
                     <div
-                     className={styles.firstDesc}
+                      className={styles.firstDesc}
                       style={{
                         display: selectedJob === "Job Role 1" ? "flex" : "none",
                       }}
@@ -518,15 +503,15 @@ function JobDetails() {
                     </div>
 
                     <div
-                    className={styles.require}
+                      className={styles.require}
                       style={{
-    
                         display: selectedJob === "Job Role 2" ? "flex" : "none",
-                 
                       }}
                     >
-                        <ul>
-                        <li>Must have Bachelor&apos;s Degree in relevant field</li>
+                      <ul>
+                        <li>
+                          Must have Bachelor&apos;s Degree in relevant field
+                        </li>
                         <li>
                           Minimum 1-2 years of professional experience working
                           with React Native.
@@ -563,28 +548,20 @@ function JobDetails() {
                     </div>
 
                     <div
-                    className={styles.thirdDesc}
+                      className={styles.thirdDesc}
                       style={{
                         display:
                           selectedJob === "Job Role 3" ? "block" : "none",
                       }}
                     >
-                      <div 
-                      className={styles.salary}
-                      >
+                      <div className={styles.salary}>
                         Salary Range:{" "}
-                        <div
-                        className={styles.market}>
-                          Market Competitive
-                        </div>{" "}
+                        <div className={styles.market}>Market Competitive</div>{" "}
                       </div>
-                      <div
-                        className={styles.salary}>
+                      <div className={styles.salary}>
                         {" "}
                         Location:{" "}
-                        <div 
-                         className={styles.market}>
-                        
+                        <div className={styles.market}>
                           I-8 Markaz Islamabad
                         </div>{" "}
                       </div>
@@ -598,7 +575,7 @@ function JobDetails() {
                     }}
                   >
                     <div
-                     className={styles.firstDesc}
+                      className={styles.firstDesc}
                       style={{
                         display: selectedJob === "Job Role 1" ? "flex" : "none",
                       }}
@@ -609,14 +586,15 @@ function JobDetails() {
                     </div>
 
                     <div
-                    className={styles.require}
+                      className={styles.require}
                       style={{
                         display: selectedJob === "Job Role 2" ? "flex" : "none",
-               
                       }}
                     >
-                       <ul>
-                        <li>Must have Bachelor&apos;s Degree in relevant field</li>
+                      <ul>
+                        <li>
+                          Must have Bachelor&apos;s Degree in relevant field
+                        </li>
                         <li>
                           Minimum 1-2 years of professional experience working
                           with React Native.
@@ -653,28 +631,20 @@ function JobDetails() {
                     </div>
 
                     <div
-                    className={styles.thirdDesc}
+                      className={styles.thirdDesc}
                       style={{
                         display:
                           selectedJob === "Job Role 3" ? "block" : "none",
                       }}
                     >
-                      <div 
-                      className={styles.salary}
-                      >
+                      <div className={styles.salary}>
                         Salary Range:{" "}
-                        <div
-                        className={styles.market}>
-                          Market Competitive
-                        </div>{" "}
+                        <div className={styles.market}>Market Competitive</div>{" "}
                       </div>
-                      <div
-                        className={styles.salary}>
+                      <div className={styles.salary}>
                         {" "}
                         Location:{" "}
-                        <div 
-                         className={styles.market}>
-                        
+                        <div className={styles.market}>
                           I-8 Markaz Islamabad
                         </div>{" "}
                       </div>
@@ -688,7 +658,7 @@ function JobDetails() {
                     }}
                   >
                     <div
-                     className={styles.firstDesc}
+                      className={styles.firstDesc}
                       style={{
                         display: selectedJob === "Job Role 1" ? "flex" : "none",
                       }}
@@ -699,14 +669,15 @@ function JobDetails() {
                     </div>
 
                     <div
-                    className={styles.require}
+                      className={styles.require}
                       style={{
                         display: selectedJob === "Job Role 2" ? "flex" : "none",
-            
                       }}
                     >
                       <ul>
-                        <li>Must have Bachelor&apos;s Degree in relevant field</li>
+                        <li>
+                          Must have Bachelor&apos;s Degree in relevant field
+                        </li>
                         <li>
                           Minimum 1-2 years of professional experience working
                           with React Native.
@@ -743,28 +714,20 @@ function JobDetails() {
                     </div>
 
                     <div
-                    className={styles.thirdDesc}
+                      className={styles.thirdDesc}
                       style={{
                         display:
                           selectedJob === "Job Role 3" ? "block" : "none",
                       }}
                     >
-                      <div 
-                      className={styles.salary}
-                      >
+                      <div className={styles.salary}>
                         Salary Range:{" "}
-                        <div
-                        className={styles.market}>
-                          Market Competitive
-                        </div>{" "}
+                        <div className={styles.market}>Market Competitive</div>{" "}
                       </div>
-                      <div
-                        className={styles.salary}>
+                      <div className={styles.salary}>
                         {" "}
                         Location:{" "}
-                        <div 
-                         className={styles.market}>
-                        
+                        <div className={styles.market}>
                           I-8 Markaz Islamabad
                         </div>{" "}
                       </div>
@@ -781,6 +744,8 @@ function JobDetails() {
                     <Link
                       href={{
                         pathname: "/careers/forum",
+                        query: data
+                    
                       }}
                     >
                       <div
@@ -793,6 +758,7 @@ function JobDetails() {
                           justifyContent: "center",
                           alignItems: "center",
                           borderRadius: "50px",
+                          cursor:"pointer"
                         }}
                       >
                         Apply for this job
@@ -805,6 +771,7 @@ function JobDetails() {
               <div style={{ background: "#FFD400" }}>
                 <div style={{ background: "#FFD400", display: "flex" }}></div>
               </div>
+            </div>
             </div>
           </div>
           <div className={styles.wrapper}></div>

@@ -22,7 +22,9 @@ function Content() {
     <>
       <div className={styles.wrapper} id="services">
         <div className={styles.content}>
-          <p className={styles.yh}>OUR SERVICES</p>
+          <p className={styles.yh}
+              style={{marginTop:"30px"}}
+          >OUR SERVICES</p>
           <p className={styles.bh}>
             Our services are great for individuals, startups and enterprises
           </p>

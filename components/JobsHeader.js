@@ -43,6 +43,7 @@ const JobsHeader = ({ selectedJob, setSelectedJob }) => {
               borderRadius: "30px",
               height: "30px",
               width: "25%",
+              cursor:"pointer"
             }}
             onClick={() => handleJobClick("Job Role 1")}
           >
@@ -62,6 +63,7 @@ const JobsHeader = ({ selectedJob, setSelectedJob }) => {
               borderRadius: "30px",
               height: "30px",
               width: "35%",
+              cursor:"pointer"
             }}
             onClick={() => handleJobClick("Job Role 2")}
           >
@@ -81,6 +83,7 @@ const JobsHeader = ({ selectedJob, setSelectedJob }) => {
               borderRadius: "30px",
               height: "30px",
               width: "25%",
+              cursor:"pointer"
             }}
             onClick={() => handleJobClick("Job Role 3")}
           >

@@ -17,7 +17,7 @@ function Portfolio() {
   const [poster, setPoster] = useState([]);
   const [color, setColor] = useState("#ffd400");
   const [isLoading, setIsLoading] = useState(true);
-  const domain = "https://globaltechnologia.org/webAdmin/";
+  const domain = "https://globaltechnologia.com/webAdmin/public/";
   // const poster = [];
   const router = useRouter();
   useEffect(() => {
@@ -26,7 +26,7 @@ function Portfolio() {
     // }
     setIsLoading(true);
     fetch(
-      "https://globaltechnologia.org/webAdmin/public/index.php/api/portshow"
+      "https://globaltechnologia.com/webAdmin/public/index.php/api/portshow"
     )
       .then((res) => {
         setIsLoading(true);
@@ -36,10 +36,10 @@ function Portfolio() {
         const heading = res;
 
         // setPoster(heading.splice(-3));
-        console.log("oh bhains", heading);
+        console.log("ohhh", heading);
         // heading.splice(-1);
         setDiscription(heading);
-        console.log("oh bhains", discription);
+        console.log("ohh", discription);
 
         // setIsLoading(false);
       });
@@ -187,6 +187,7 @@ function Portfolio() {
                         }}
                       >
                         <figure>
+                          {console.log("URL ========",data.url)}
                           <Image
                             loader={() => {
                               return domain + data.url;
